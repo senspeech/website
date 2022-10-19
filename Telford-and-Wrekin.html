@@ -91,6 +91,80 @@ pre code {
 </style>
 
 
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
 
 <!-- tabsets -->
 
@@ -163,6 +237,500 @@ pre code {
 
 
 
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Schools see language needs rise post lockdown</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+Local authorities A-B
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Barking-and-Dagenham.html">Barking-and-Dagenham</a>
+    </li>
+    <li>
+      <a href="Barnet.html">Barnet</a>
+    </li>
+    <li>
+      <a href="Barnsley.html">Barnsley</a>
+    </li>
+    <li>
+      <a href="Bath-and-North-East-Somerset.html">Bath-and-North-East-Somerset</a>
+    </li>
+    <li>
+      <a href="Bedford.html">Bedford</a>
+    </li>
+    <li>
+      <a href="Bexley.html">Bexley</a>
+    </li>
+    <li>
+      <a href="Birmingham.html">Birmingham</a>
+    </li>
+    <li>
+      <a href="Blackburn-with-Darwen.html">Blackburn-with-Darwen</a>
+    </li>
+    <li>
+      <a href="Blackpool.html">Blackpool</a>
+    </li>
+    <li>
+      <a href="Bolton.html">Bolton</a>
+    </li>
+    <li>
+      <a href="Bournemouth,-Christchurch-and-Poole.html">Bournemouth,-Christchurch-and-Poole</a>
+    </li>
+    <li>
+      <a href="Bournemouth.html">Bournemouth</a>
+    </li>
+    <li>
+      <a href="Bracknell-Forest.html">Bracknell-Forest</a>
+    </li>
+    <li>
+      <a href="Bradford.html">Bradford</a>
+    </li>
+    <li>
+      <a href="Brent.html">Brent</a>
+    </li>
+    <li>
+      <a href="Brighton-and-Hove.html">Brighton-and-Hove</a>
+    </li>
+    <li>
+      <a href="Bristol,-City-of.html">Bristol,-City-of</a>
+    </li>
+    <li>
+      <a href="Bromley.html">Bromley</a>
+    </li>
+    <li>
+      <a href="Buckinghamshire.html">Buckinghamshire</a>
+    </li>
+    <li>
+      <a href="Bury.html">Bury</a>
+    </li>
+</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">C-E<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>
+      <a href="Calderdale.html">Calderdale</a>
+    </li>
+    <li>
+      <a href="Cambridgeshire.html">Cambridgeshire</a>
+    </li>
+
+
+
+    <li>
+      <a href="Central-Bedfordshire.html">Central-Bedfordshire</a>
+    </li>
+    <li>
+      <a href="Cheshire-East.html">Cheshire-East</a>
+    </li>
+    <li>
+      <a href="Cheshire-West-and-Chester.html">Cheshire-West-and-Chester</a>
+    </li>
+    <li>
+      <a href="City-of-London.html">City-of-London</a>
+    </li>
+    <li>
+      <a href="Cornwall.html">Cornwall</a>
+    </li>
+    <li>
+      <a href="County-Durham.html">County-Durham</a>
+    </li>
+    <li>
+      <a href="Coventry.html">Coventry</a>
+    </li>
+    <li>
+      <a href="Croydon.html">Croydon</a>
+    </li>
+    <li>
+      <a href="Cumbria.html">Cumbria</a>
+    </li>
+    <li>
+      <a href="Darlington.html">Darlington</a>
+    </li>
+    <li>
+      <a href="Derby.html">Derby</a>
+    </li>
+    <li>
+      <a href="Derbyshire.html">Derbyshire</a>
+    </li>
+    <li>
+      <a href="Devon.html">Devon</a>
+    </li>
+    <li>
+      <a href="Doncaster.html">Doncaster</a>
+    </li>
+    <li>
+      <a href="Dorset.html">Dorset</a>
+    </li>
+    <li>
+      <a href="Dudley.html">Dudley</a>
+    </li>
+    <li>
+      <a href="Ealing.html">Ealing</a>
+    </li>
+    <li>
+      <a href="East-Riding-of-Yorkshire.html">East-Riding-of-Yorkshire</a>
+    </li>
+    <li>
+      <a href="East-Sussex.html">East-Sussex</a>
+    </li>
+    <li>
+      <a href="Enfield.html">Enfield</a>
+    </li>
+    <li>
+      <a href="Essex.html">Essex</a>
+    </li>
+</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">G-K<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>
+      <a href="Gateshead.html">Gateshead</a>
+    </li>
+    <li>
+      <a href="Gloucestershire.html">Gloucestershire</a>
+    </li>
+    <li>
+      <a href="Greenwich.html">Greenwich</a>
+    </li>
+    <li>
+      <a href="Hackney.html">Hackney</a>
+    </li>
+    <li>
+      <a href="Halton.html">Halton</a>
+    </li>
+    <li>
+      <a href="Hammersmith-and-Fulham.html">Hammersmith-and-Fulham</a>
+    </li>
+    <li>
+      <a href="Hampshire.html">Hampshire</a>
+    </li>
+    <li>
+      <a href="Haringey.html">Haringey</a>
+    </li>
+    <li>
+      <a href="Harrow.html">Harrow</a>
+    </li>
+    <li>
+      <a href="Hartlepool.html">Hartlepool</a>
+    </li>
+    <li>
+      <a href="Havering.html">Havering</a>
+    </li>
+    <li>
+      <a href="Herefordshire,-County-of.html">Herefordshire,-County-of</a>
+    </li>
+    <li>
+      <a href="Hertfordshire.html">Hertfordshire</a>
+    </li>
+    <li>
+      <a href="Hillingdon.html">Hillingdon</a>
+    </li>
+    <li>
+      <a href="Hounslow.html">Hounslow</a>
+    </li>
+    <li>
+      <a href="Isle-of-Wight.html">Isle-of-Wight</a>
+    </li>
+    <li>
+      <a href="Islington.html">Islington</a>
+    </li>
+    <li>
+      <a href="Kensington-and-Chelsea.html">Kensington-and-Chelsea</a>
+    </li>
+    <li>
+      <a href="Kent.html">Kent</a>
+    </li>
+    <li>
+      <a href="Kingston-upon-Hull,-City-of.html">Kingston-upon-Hull,-City-of</a>
+    </li>
+    <li>
+      <a href="Kingston-upon-Thames.html">Kingston-upon-Thames</a>
+    </li>
+    <li>
+      <a href="Kirklees.html">Kirklees</a>
+    </li>
+    <li>
+      <a href="Knowsley.html">Knowsley</a>
+    </li>
+</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">L-M<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>
+      <a href="Lambeth.html">Lambeth</a>
+    </li>
+    <li>
+      <a href="Lancashire.html">Lancashire</a>
+    </li>
+    <li>
+      <a href="Leeds.html">Leeds</a>
+    </li>
+    <li>
+      <a href="Leicester.html">Leicester</a>
+    </li>
+    <li>
+      <a href="Leicestershire.html">Leicestershire</a>
+    </li>
+    <li>
+      <a href="Lewisham.html">Lewisham</a>
+    </li>
+    <li>
+      <a href="Lincolnshire.html">Lincolnshire</a>
+    </li>
+    <li>
+      <a href="Liverpool.html">Liverpool</a>
+    </li>
+    <li>
+      <a href="Luton.html">Luton</a>
+    </li>
+    <li>
+      <a href="Manchester.html">Manchester</a>
+    </li>
+    <li>
+      <a href="Medway.html">Medway</a>
+    </li>
+    <li>
+      <a href="Merton.html">Merton</a>
+    </li>
+    <li>
+      <a href="Middlesbrough.html">Middlesbrough</a>
+    </li>
+    <li>
+      <a href="Milton-Keynes.html">Milton-Keynes</a>
+    </li>
+</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">N-P<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>
+      <a href="Newcastle-upon-Tyne.html">Newcastle-upon-Tyne</a>
+    </li>
+    <li>
+      <a href="Newham.html">Newham</a>
+    </li>
+    <li>
+      <a href="Norfolk.html">Norfolk</a>
+    </li>
+    <li>
+      <a href="North-East-Lincolnshire.html">North-East-Lincolnshire</a>
+    </li>
+    <li>
+      <a href="North-Lincolnshire.html">North-Lincolnshire</a>
+    </li>
+    <li>
+      <a href="North-Northamptonshire.html">North-Northamptonshire</a>
+    </li>
+    <li>
+      <a href="North-Somerset.html">North-Somerset</a>
+    </li>
+    <li>
+      <a href="North-Tyneside.html">North-Tyneside</a>
+    </li>
+    <li>
+      <a href="North-Yorkshire.html">North-Yorkshire</a>
+    </li>
+    <li>
+      <a href="Northamptonshire.html">Northamptonshire</a>
+    </li>
+    <li>
+      <a href="Northumberland.html">Northumberland</a>
+    </li>
+    <li>
+      <a href="Nottingham.html">Nottingham</a>
+    </li>
+    <li>
+      <a href="Nottinghamshire.html">Nottinghamshire</a>
+    </li>
+    <li>
+      <a href="Oldham.html">Oldham</a>
+    </li>
+    <li>
+      <a href="Oxfordshire.html">Oxfordshire</a>
+    </li>
+    <li>
+      <a href="Peterborough.html">Peterborough</a>
+    </li>
+    <li>
+      <a href="Plymouth.html">Plymouth</a>
+    </li>
+    <li>
+      <a href="Poole.html">Poole</a>
+    </li>
+    <li>
+      <a href="Portsmouth.html">Portsmouth</a>
+    </li>
+</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">R<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>
+      <a href="Reading.html">Reading</a>
+    </li>
+    <li>
+      <a href="Redbridge.html">Redbridge</a>
+    </li>
+    <li>
+      <a href="Redcar-and-Cleveland.html">Redcar-and-Cleveland</a>
+    </li>
+    <li>
+      <a href="Richmond-upon-Thames.html">Richmond-upon-Thames</a>
+    </li>
+    <li>
+      <a href="Rochdale.html">Rochdale</a>
+    </li>
+    <li>
+      <a href="Rotherham.html">Rotherham</a>
+    </li>
+    <li>
+      <a href="Rutland.html">Rutland</a>
+    </li>
+</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">S<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>
+      <a href="Salford.html">Salford</a>
+    </li>
+    <li>
+      <a href="Sandwell.html">Sandwell</a>
+    </li>
+    <li>
+      <a href="Sefton.html">Sefton</a>
+    </li>
+    <li>
+      <a href="Sheffield.html">Sheffield</a>
+    </li>
+    <li>
+      <a href="Shropshire.html">Shropshire</a>
+    </li>
+    <li>
+      <a href="Slough.html">Slough</a>
+    </li>
+    <li>
+      <a href="Solihull.html">Solihull</a>
+    </li>
+    <li>
+      <a href="Somerset.html">Somerset</a>
+    </li>
+    <li>
+      <a href="South-Gloucestershire.html">South-Gloucestershire</a>
+    </li>
+    <li>
+      <a href="South-Tyneside.html">South-Tyneside</a>
+    </li>
+    <li>
+      <a href="Southampton.html">Southampton</a>
+    </li>
+    <li>
+      <a href="Southend-on-Sea.html">Southend-on-Sea</a>
+    </li>
+    <li>
+      <a href="Southwark.html">Southwark</a>
+    </li>
+    <li>
+      <a href="St.-Helens.html">St.-Helens</a>
+    </li>
+    <li>
+      <a href="Staffordshire.html">Staffordshire</a>
+    </li>
+    <li>
+      <a href="Stockport.html">Stockport</a>
+    </li>
+    <li>
+      <a href="Stockton-on-Tees.html">Stockton-on-Tees</a>
+    </li>
+    <li>
+      <a href="Stoke-on-Trent.html">Stoke-on-Trent</a>
+    </li>
+    <li>
+      <a href="Suffolk.html">Suffolk</a>
+    </li>
+    <li>
+      <a href="Sunderland.html">Sunderland</a>
+    </li>
+    <li>
+      <a href="Surrey.html">Surrey</a>
+    </li>
+    <li>
+      <a href="Sutton.html">Sutton</a>
+    </li>
+    <li>
+      <a href="Swindon.html">Swindon</a>
+    </li>
+</ul></li></ul><ul class="nav navbar-nav navbar-right"></ul><ul class="nav navbar-nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">T-Z<span class="caret"></span></a><ul class="dropdown-menu" role="menu"><li>
+      <a href="Tameside.html">Tameside</a>
+    </li>
+    <li>
+      <a href="Telford-and-Wrekin.html">Telford-and-Wrekin</a>
+    </li>
+    <li>
+      <a href="Thurrock.html">Thurrock</a>
+    </li>
+    <li>
+      <a href="Torbay.html">Torbay</a>
+    </li>
+
+
+
+    <li>
+      <a href="Tower-Hamlets.html">Tower-Hamlets</a>
+    </li>
+    <li>
+      <a href="Trafford.html">Trafford</a>
+    </li>
+    <li>
+      <a href="Wakefield.html">Wakefield</a>
+    </li>
+    <li>
+      <a href="Walsall.html">Walsall</a>
+    </li>
+    <li>
+      <a href="Waltham-Forest.html">Waltham-Forest</a>
+    </li>
+    <li>
+      <a href="Wandsworth.html">Wandsworth</a>
+    </li>
+    <li>
+      <a href="Warrington.html">Warrington</a>
+    </li>
+    <li>
+      <a href="Warwickshire.html">Warwickshire</a>
+    </li>
+    <li>
+      <a href="West-Berkshire.html">West-Berkshire</a>
+    </li>
+    <li>
+      <a href="West-Northamptonshire.html">West-Northamptonshire</a>
+    </li>
+    <li>
+      <a href="West-Sussex.html">West-Sussex</a>
+    </li>
+    <li>
+      <a href="Westminster.html">Westminster</a>
+    </li>
+    <li>
+      <a href="Wigan.html">Wigan</a>
+    </li>
+    <li>
+      <a href="Wiltshire.html">Wiltshire</a>
+    </li>
+    <li>
+      <a href="Windsor-and-Maidenhead.html">Windsor-and-Maidenhead</a>
+    </li>
+    <li>
+      <a href="Wirral.html">Wirral</a>
+    </li>
+    <li>
+      <a href="Wokingham.html">Wokingham</a>
+    </li>
+    <li>
+      <a href="Wolverhampton.html">Wolverhampton</a>
+    </li>
+    <li>
+      <a href="Worcestershire.html">Worcestershire</a>
+    </li>
+    <li>
+      <a href="York.html">York</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
 <div id="header">
 
 
@@ -172,21 +740,21 @@ pre code {
 
 
 
-<html>
-<head>
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-<title>
-Local authority analysis: Telford and Wrekin
-</title>
-<script src="libs/header-attrs-2.15/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -199,6 +767,8 @@ Local authority analysis: Telford and Wrekin
 <script src="libs/navigation-1.1/tabsets.js"></script>
 <link href="libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
 <script src="libs/datatables-binding-0.24/datatables.js"></script>
@@ -355,11 +925,11 @@ in the region out of 14 authorities.
 <h2>
 Explore your area
 </h2>
-<div id="htmlwidget-8cd0321213597e13a366" class="datatables html-widget"
+<div id="htmlwidget-dd7c9b984772e177bbcc" class="datatables html-widget"
 style="width:100%;height:auto;">
 
 </div>
-<script type="application/json" data-for="htmlwidget-8cd0321213597e13a366">{"x":{"style":"bootstrap","filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"102\" data-max=\"765\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"112\" data-max=\"836\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"133\" data-max=\"868\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"118\" data-max=\"900\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"119\" data-max=\"899\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"106\" data-max=\"936\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"144\" data-max=\"1114\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","caption":"<caption>Analysis by the BBC Shared Data Unit<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["Telford and Wrekin","Coventry","Wolverhampton","Staffordshire","Shropshire","Birmingham","Walsall","Dudley","Solihull","Worcestershire","Sandwell","Stoke-on-Trent","Warwickshire","Herefordshire, County of"],[139,341,102,321,140,765,143,331,131,473,276,217,281,151],[132,279,121,326,112,836,174,362,142,514,341,246,346,145],[141,280,133,325,160,868,226,340,144,563,358,270,303,141],[153,282,142,386,154,900,237,368,130,615,381,273,311,118],[139,306,151,342,132,899,266,322,126,622,341,277,312,119],[131,282,188,341,153,936,247,343,132,671,336,248,318,106],[192,386,246,438,191,1114,275,378,145,724,361,260,329,144]],"container":"<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>la_name<\/th>\n      <th>201516<\/th>\n      <th>201617<\/th>\n      <th>201718<\/th>\n      <th>201819<\/th>\n      <th>201920<\/th>\n      <th>202021<\/th>\n      <th>202122<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"scrollX":true,"autoWidth":true,"order":[8,"desc"],"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8]},{"orderable":false,"targets":0}],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-dd7c9b984772e177bbcc">{"x":{"style":"bootstrap","filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"102\" data-max=\"765\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"112\" data-max=\"836\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"133\" data-max=\"868\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"118\" data-max=\"900\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"119\" data-max=\"899\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"106\" data-max=\"936\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"144\" data-max=\"1114\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","caption":"<caption>Analysis by the BBC Shared Data Unit<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["Birmingham","Coventry","Dudley","Herefordshire, County of","Sandwell","Shropshire","Solihull","Staffordshire","Stoke-on-Trent","Telford and Wrekin","Walsall","Warwickshire","Wolverhampton","Worcestershire"],[765,341,331,151,276,140,131,321,217,139,143,281,102,473],[836,279,362,145,341,112,142,326,246,132,174,346,121,514],[868,280,340,141,358,160,144,325,270,141,226,303,133,563],[900,282,368,118,381,154,130,386,273,153,237,311,142,615],[899,306,322,119,341,132,126,342,277,139,266,312,151,622],[936,282,343,106,336,153,132,341,248,131,247,318,188,671],[1114,386,378,144,361,191,145,438,260,192,275,329,246,724]],"container":"<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>la_name<\/th>\n      <th>201516<\/th>\n      <th>201617<\/th>\n      <th>201718<\/th>\n      <th>201819<\/th>\n      <th>201920<\/th>\n      <th>202021<\/th>\n      <th>202122<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"scrollX":true,"autoWidth":true,"order":[8,"desc"],"columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7,8]},{"orderable":false,"targets":0}],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div
 id="chart-numbers-of-children-needing-speech-and-communication-support"
@@ -368,7 +938,7 @@ class="section level2">
 Chart: numbers of children needing speech and communication support
 </h2>
 <p>
-<img src="Telford%20and%20Wrekin_files/figure-html/create%20line%20plot-1.png" width="672" />
+<img src="Telford-and-Wrekin_files/figure-html/create%20line%20plot-1.png" width="672" />
 </p>
 </div>
 <div id="explore-the-data-year-on-year-change-since-2016"
@@ -376,11 +946,11 @@ class="section level2">
 <h2>
 Explore the data: year-on-year change since 2016
 </h2>
-<div id="htmlwidget-1f427a4286c7e00665ea" class="datatables html-widget"
+<div id="htmlwidget-6051b96903916f8b909c" class="datatables html-widget"
 style="width:100%;height:auto;">
 
 </div>
-<script type="application/json" data-for="htmlwidget-1f427a4286c7e00665ea">{"x":{"style":"bootstrap","filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","caption":"<caption>Analysis by the BBC Shared Data Unit<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["Telford and Wrekin","Coventry","Wolverhampton","Staffordshire","Shropshire","Birmingham","Walsall","Dudley","Solihull","Worcestershire","Sandwell","Stoke-on-Trent","Warwickshire","Herefordshire, County of"],["-5.04%","-18.18%","18.63%","1.56%","-20.00%","9.28%","21.68%","9.37%","8.40%","8.67%","23.55%","13.36%","23.13%","-3.97%"],["6.82%","0.36%","9.92%","-0.31%","42.86%","3.83%","29.89%","-6.08%","1.41%","9.53%","4.99%","9.76%","-12.43%","-2.76%"],["8.51%","0.71%","6.77%","18.77%","-3.75%","3.69%","4.87%","8.24%","-9.72%","9.24%","6.42%","1.11%","2.64%","-16.31%"],["-9.15%","8.51%","6.34%","-11.40%","-14.29%","-0.11%","12.24%","-12.50%","-3.08%","1.14%","-10.50%","1.47%","0.32%","0.85%"],["-5.76%","-7.84%","24.50%","-0.29%","15.91%","4.12%","-7.14%","6.52%","4.76%","7.88%","-1.47%","-10.47%","1.92%","-10.92%"],["46.56%","36.88%","30.85%","28.45%","24.84%","19.02%","11.34%","10.20%","9.85%","7.90%","7.44%","4.84%","3.46%","35.85%"]],"container":"<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>la_name<\/th>\n      <th>Change from 16to17<\/th>\n      <th>Change from 17to18<\/th>\n      <th>Change from 18to19<\/th>\n      <th>Change from 19to20<\/th>\n      <th>Change from 20to21<\/th>\n      <th>Change from 21to22<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"scrollX":true,"autoWidth":true,"order":[7,"desc"],"columnDefs":[{"orderable":false,"targets":0}],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-6051b96903916f8b909c">{"x":{"style":"bootstrap","filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","caption":"<caption>Analysis by the BBC Shared Data Unit<\/caption>","data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],["Birmingham","Coventry","Dudley","Herefordshire, County of","Sandwell","Shropshire","Solihull","Staffordshire","Stoke-on-Trent","Telford and Wrekin","Walsall","Warwickshire","Wolverhampton","Worcestershire"],["9.28%","-18.18%","9.37%","-3.97%","23.55%","-20.00%","8.40%","1.56%","13.36%","-5.04%","21.68%","23.13%","18.63%","8.67%"],["3.83%","0.36%","-6.08%","-2.76%","4.99%","42.86%","1.41%","-0.31%","9.76%","6.82%","29.89%","-12.43%","9.92%","9.53%"],["3.69%","0.71%","8.24%","-16.31%","6.42%","-3.75%","-9.72%","18.77%","1.11%","8.51%","4.87%","2.64%","6.77%","9.24%"],["-0.11%","8.51%","-12.50%","0.85%","-10.50%","-14.29%","-3.08%","-11.40%","1.47%","-9.15%","12.24%","0.32%","6.34%","1.14%"],["4.12%","-7.84%","6.52%","-10.92%","-1.47%","15.91%","4.76%","-0.29%","-10.47%","-5.76%","-7.14%","1.92%","24.50%","7.88%"],["19.02%","36.88%","10.20%","35.85%","7.44%","24.84%","9.85%","28.45%","4.84%","46.56%","11.34%","3.46%","30.85%","7.90%"]],"container":"<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>la_name<\/th>\n      <th>Change from 16to17<\/th>\n      <th>Change from 17to18<\/th>\n      <th>Change from 18to19<\/th>\n      <th>Change from 19to20<\/th>\n      <th>Change from 20to21<\/th>\n      <th>Change from 21to22<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"scrollX":true,"autoWidth":true,"order":[7,"desc"],"columnDefs":[{"orderable":false,"targets":0}],"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div
 id="chart-year-on-year-change-in-children-needing-speech-and-communication-support"
@@ -390,7 +960,7 @@ Chart: year-on-year change in children needing speech and communication
 support
 </h2>
 <p>
-<img src="Telford%20and%20Wrekin_files/figure-html/create%20bar-1.png" width="672" />
+<img src="Telford-and-Wrekin_files/figure-html/create%20bar-1.png" width="672" />
 </p>
 </div>
 </div>
